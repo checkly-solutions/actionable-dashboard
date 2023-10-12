@@ -2,16 +2,18 @@
 
 import React, { useState, useEffect } from 'react';
 import { getAllChecks, getAllCheckStatuses } from '../api/routes';
+import UpdateButton from './updateButton';
 
 const cellStyle = {
   paddingLeft: '10px',
   paddingTop: '10px',
   border: '1px solid teal',
 };
-const buttonStyle = { margin: '5px', padding: '5px' };
 
 const getStatus = (check) => {
-  if (check.status.hasFailures) {
+  if (check.activated === false) {
+    return 'Deactivated';
+  } else if (check.status.hasFailures) {
     return 'Failing';
   } else if (check.status.hasErrors || check.status.isDegraded) {
     return 'Degraded';
@@ -22,6 +24,8 @@ const getStatus = (check) => {
 
 const getStatusColor = (status) => {
   switch (status) {
+    case 'Deactivated':
+      return 'teal';
     case 'Failing':
       return 'red';
     case 'Degraded':
@@ -35,6 +39,7 @@ const getStatusColor = (status) => {
 function ChecksTable() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -56,7 +61,11 @@ function ChecksTable() {
       }
     }
     fetchData();
-  }, []);
+  }, [refreshTrigger]);
+
+  const handleSubmission = () => {
+    setRefreshTrigger((prev) => prev + 1); // Trigger a refresh by updating refreshTrigger
+  };
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -93,20 +102,18 @@ function ChecksTable() {
               <td style={cellStyle}>{check.tags.join(', ')}</td>
               <td style={{ ...cellStyle, color: statusColor }}>{status}</td>
               <td style={cellStyle}>
-                <button
-                  style={buttonStyle}
-                  data-id={check.id}
-                  onClick={() => handleActivate(check.id)}
-                >
-                  Activate
-                </button>
-                <button
-                  style={buttonStyle}
-                  data-id={check.id}
-                  onClick={() => handleMute(check.id)}
-                >
-                  Mute
-                </button>
+                <UpdateButton
+                  checkId={check.id}
+                  currentState={check.activated}
+                  updateType='activated'
+                  onSubmit={handleSubmission}
+                />
+                <UpdateButton
+                  checkId={check.id}
+                  currentState={check.muted}
+                  updateType='muted'
+                  onSubmit={handleSubmission}
+                />
               </td>
             </tr>
           );

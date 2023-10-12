@@ -15,7 +15,7 @@ const api = axios.create({
 async function getAllChecks() {
   try {
     const response = await api.get('checks');
-    console.log(response.data, "checks")
+    console.log(response.data, 'checks');
     return response.data;
   } catch (error) {
     console.error(error);
@@ -26,6 +26,7 @@ async function getAllChecks() {
 async function updateCheck(checkId, updateData) {
   try {
     const response = await api.put(`checks/${checkId}`, updateData);
+    console.log(response.data, 'updated check');
     return response.data;
   } catch (error) {
     console.error(error);
@@ -46,15 +47,13 @@ async function getAllCheckGroups() {
 async function getAllCheckStatuses() {
   try {
     const response = await api.get('check-statuses');
-    console.log(response.data, "check statuses")
+    console.log(response.data, 'check statuses');
     return response.data;
   } catch (error) {
     console.error(error);
     throw error;
   }
 }
-
-
 
 module.exports = {
   getAllCheckGroups,
