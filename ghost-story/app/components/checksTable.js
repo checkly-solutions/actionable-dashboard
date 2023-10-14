@@ -6,6 +6,7 @@ import UpdateButton from './updateButton';
 
 const cellStyle = {
   paddingLeft: '10px',
+  paddingRight: '10px',
   paddingTop: '10px',
   border: '1px solid teal',
 };

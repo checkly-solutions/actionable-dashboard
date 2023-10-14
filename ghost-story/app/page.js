@@ -7,7 +7,6 @@ import ChecksTable from './components/checksTable';
 export default function Home() {
   return (
     <main className={styles.main}>
-      {/* <AccountForm></AccountForm> */}
       <ChecksTable></ChecksTable>
       <div className={styles.description}>hello world</div>
     </main>
