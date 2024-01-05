@@ -5,40 +5,8 @@ import { getAllChecks, getAllCheckStatuses, getAllCheckGroups } from '../api/rou
 import UpdateButton from './updateButton';
 import TagsList from './tagsList';
 import GroupList from './groupList';
-import styles from '../page.module.css';
+import { getStatus, getStatusColor } from '../utils/statusUtils';
 
-const cellStyle = {
-  paddingLeft: '10px',
-  paddingRight: '10px',
-  paddingTop: '10px',
-  border: '1px solid teal',
-};
-
-const getStatus = (check) => {
-  if (check.activated === false) {
-    return 'Deactivated';
-  } else if (check.status.hasFailures) {
-    return 'Failing';
-  } else if (check.status.hasErrors || check.status.isDegraded) {
-    return 'Degraded';
-  } else {
-    return 'Passing';
-  }
-};
-
-const getStatusColor = (status) => {
-  switch (status) {
-    case 'Deactivated':
-      return 'teal';
-    case 'Failing':
-      return 'red';
-    case 'Degraded':
-      return 'yellow';
-    case 'Passing':
-    default:
-      return 'green';
-  }
-};
 
 const ChecksTable = () => {
   const [data, setData] = useState(null);
