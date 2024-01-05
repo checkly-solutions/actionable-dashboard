@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <ChecksTable></ChecksTable>
-      <div className={styles.description}>hello world</div>
     </main>
   );
 }

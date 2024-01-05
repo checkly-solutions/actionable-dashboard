@@ -4,7 +4,7 @@ import React from 'react';
 import { updateCheck } from '../api/routes';
 const buttonStyle = { margin: '5px', padding: '5px' };
 
-function HandleButton({ checkId, currentState, updateType, onSubmit }) {
+const  HandleButton = ({ checkId, currentState, updateType, onSubmit }) => {
   const handleClick = async () => {
     const updateData = { [updateType]: !currentState };
     try {

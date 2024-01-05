@@ -5,6 +5,7 @@ import { getAllChecks, getAllCheckStatuses, getAllCheckGroups } from '../api/rou
 import UpdateButton from './updateButton';
 import TagsList from './tagsList';
 import GroupList from './groupList';
+import styles from '../page.module.css';
 
 const cellStyle = {
   paddingLeft: '10px',
@@ -39,11 +40,12 @@ const getStatusColor = (status) => {
   }
 };
 
-function ChecksTable() {
+const ChecksTable = () => {
   const [data, setData] = useState(null);
   const [groups, setGroups] = useState(null);
   const [error, setError] = useState(null);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [selectedTags, setSelectedTags] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -60,7 +62,7 @@ function ChecksTable() {
         }));
 
         // Map the group data correctly
-        setGroups(checkGroupsResponse); 
+        setGroups(checkGroupsResponse);
 
         setData(mergedData);
       } catch (error) {
@@ -70,6 +72,20 @@ function ChecksTable() {
     }
     fetchData();
   }, [refreshTrigger]);
+
+  const handleTagClick = (tag) => {
+    setSelectedTags((prevTags) =>
+      prevTags.includes(tag) ? prevTags.filter((t) => t !== tag) : [...prevTags, tag]
+    );
+  };
+
+  const filteredData = data
+    ? data.filter(
+        (check) =>
+          selectedTags.length === 0 ||
+          selectedTags.some((tag) => check.tags && check.tags.includes(tag))
+      )
+    : [];
 
   const handleSubmission = () => {
     setRefreshTrigger((prev) => prev + 1); // Trigger a refresh by updating refreshTrigger
@@ -86,34 +102,33 @@ function ChecksTable() {
   return (
     <>
       <GroupList groups={groups} />
-      <TagsList checks={data} />
+      <TagsList checks={data} onTagClick={handleTagClick} selectedTags={selectedTags} />
       <table>
         <thead style={{ color: 'white', fontSize: '24px' }}>
-          <tr>
-            <th style={cellStyle}>Name</th>
-            <th style={cellStyle}>Check Type</th>
-            <th style={cellStyle}>Activated</th>
-            <th style={cellStyle}>Muted</th>
-            <th style={cellStyle}>Tags</th>
-            <th style={cellStyle}>Status</th>
-            <th style={cellStyle}>Actions</th>
+          <tr className='cellStyle'>
+            <th>Name</th>
+            <th>Check Type</th>
+            <th>Activated</th>
+            <th>Muted</th>
+            <th>Tags</th>
+            <th>Status</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody style={{ color: 'white', fontSize: '18px' }}>
-          {data.map((check) => {
+          {filteredData.map((check) => {
             const status = getStatus(check);
             const statusColor = getStatusColor(status);
-            const tagsList = check.tags;
 
             return (
-              <tr key={check.id} data-id={check.id}>
-                <td style={cellStyle}>{check.name}</td>
-                <td style={cellStyle}>{check.checkType}</td>
-                <td style={cellStyle}>{check.activated ? 'Yes' : 'No'}</td>
-                <td style={cellStyle}>{check.muted ? 'Yes' : 'No'}</td>
-                <td style={cellStyle}>{check.tags.join(', ')}</td>
-                <td style={{ ...cellStyle, color: statusColor }}>{status}</td>
-                <td style={cellStyle}>
+              <tr className='cellStyle' key={check.id} data-id={check.id}>
+                <td>{check.name}</td>
+                <td>{check.checkType}</td>
+                <td>{check.activated ? 'Yes' : 'No'}</td>
+                <td>{check.muted ? 'Yes' : 'No'}</td>
+                <td>{check.tags.join(', ')}</td>
+                <td style={{ color: statusColor }}>{status}</td>
+                <td>
                   <UpdateButton
                     checkId={check.id}
                     currentState={check.activated}
@@ -134,6 +149,6 @@ function ChecksTable() {
       </table>
     </>
   );
-}
+};
 
 export default ChecksTable;

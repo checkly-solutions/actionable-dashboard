@@ -1,5 +1,4 @@
 const axios = require('axios');
-
 const apiKey = 'sv_e3b289cd144c4aba9b94259dbe50562b';
 const accountID = '70a705d3-488c-4ade-8f54-376ae7e974ba';
 
@@ -16,17 +15,6 @@ async function getAllChecks() {
   try {
     const response = await api.get('checks');
     console.log(response.data, 'checks');
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-}
-
-async function updateCheck(checkId, updateData) {
-  try {
-    const response = await api.put(`checks/${checkId}`, updateData);
-    console.log(response.data, 'updated check');
     return response.data;
   } catch (error) {
     console.error(error);
@@ -56,9 +44,48 @@ async function getAllCheckStatuses() {
   }
 }
 
+async function getAnalyticsBrowser(id) {
+  try {
+    const response = await api.get(
+      `analytics/browser-checks/${id}?quickRange=thisWeek&metrics=availability`
+    );
+    console.log(response.data, 'browser analytics');
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+async function getAnalyticsApi(id) {
+  try {
+    const response = await api.get(
+      `analytics/api-checks/${id}?quickRange=thisWeek&metrics=availability`
+    );
+    console.log(response.data, 'api analytics');
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+async function updateCheck(checkId, updateData) {
+  try {
+    const response = await api.put(`checks/${checkId}`, updateData);
+    console.log(response.data, 'updated check');
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 module.exports = {
   getAllCheckGroups,
   getAllChecks,
   getAllCheckStatuses,
   updateCheck,
+  getAnalyticsApi,
+  getAnalyticsBrowser
 };

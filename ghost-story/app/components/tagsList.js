@@ -1,22 +1,30 @@
 'use client';
-import React from 'react'
+import React from 'react';
 
-const TagsList = ({checks}) => {
-  const uniqueTags = [];
+const TagsList = ({ checks, onTagClick, selectedTags }) => {
+  const uniqueTags = new Set(checks.flatMap((check) => check.tags || []));
 
-  // Filter out empty tag arrays from checks
-  checks = checks.filter((check) => check.tags && check.tags.length > 0);
+  const handleTagClick = (tag) => {
+    onTagClick(tag); // Callback to inform parent component
+  };
 
-  checks.forEach((check) => {
-    check.tags.forEach((tag) => {
-      if (!uniqueTags.includes(tag)) uniqueTags.push(tag);
-    });
-  });
   return (
     <div style={{ width: '100%' }}>
       <h3 style={{ color: 'white', fontSize: '18px' }}>Tags:</h3>
-      {uniqueTags.map((tag) => tag + ' ' )}
-    </div>  )
-}
+      {[...uniqueTags].map((tag) => (
+        <span
+          key={tag}
+          onClick={() => handleTagClick(tag)}
+          style={{
+            color: selectedTags.includes(tag) ? 'blue' : 'white',
+            cursor: 'pointer',
+          }}
+        >
+          {tag}{" "}
+        </span>
+      ))}
+    </div>
+  );
+};
 
 export default TagsList;
