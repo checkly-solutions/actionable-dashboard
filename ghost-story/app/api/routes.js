@@ -37,6 +37,7 @@ async function updateCheck(checkId, updateData) {
 async function getAllCheckGroups() {
   try {
     const response = await api.get('check-groups');
+    console.log(response.data, 'groups');
     return response.data;
   } catch (error) {
     console.error(error);
