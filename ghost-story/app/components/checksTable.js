@@ -1,12 +1,18 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { getAllChecks, getAllCheckStatuses, getAllCheckGroups } from '../api/routes';
+import {
+  getAllChecks,
+  getAllCheckStatuses,
+  getAllCheckGroups,
+  getAnalyticsApi,
+  getAnalyticsBrowser,
+} from '../api/routes';
 import UpdateButton from './updateButton';
 import TagsList from './tagsList';
 import GroupList from './groupList';
 import { getStatus, getStatusColor } from '../utils/statusUtils';
-
+import styles from '../page.module.css';
 
 const ChecksTable = () => {
   const [data, setData] = useState(null);
@@ -21,18 +27,30 @@ const ChecksTable = () => {
         const [checkStatusesResponse, checksResponse, checkGroupsResponse] = await Promise.all([
           getAllCheckStatuses(),
           getAllChecks(),
-          getAllCheckGroups(), // Fix the call to fetch groups
+          getAllCheckGroups(),
         ]);
 
-        const mergedData = checksResponse.map((check, index) => ({
+        const mergedDataWithStatus = checksResponse.map((check, index) => ({
           ...check,
           status: checkStatusesResponse[index],
         }));
 
-        // Map the group data correctly
-        setGroups(checkGroupsResponse);
+        const mergedDataWithAnalytics = await Promise.all(
+          mergedDataWithStatus.map(async (check) => {
+            let analyticsData = null;
 
-        setData(mergedData);
+            if (check.checkType === 'BROWSER') {
+              analyticsData = await getAnalyticsBrowser(check.id);
+            } else if (check.checkType === 'API') {
+              analyticsData = await getAnalyticsApi(check.id);
+            }
+
+            return { ...check, analytics: analyticsData };
+          })
+        );
+
+        setGroups(checkGroupsResponse);
+        setData(mergedDataWithAnalytics);
       } catch (error) {
         console.error('Error fetching data:', error);
         setError(error.toString());
@@ -73,14 +91,15 @@ const ChecksTable = () => {
       <TagsList checks={data} onTagClick={handleTagClick} selectedTags={selectedTags} />
       <table>
         <thead style={{ color: 'white', fontSize: '24px' }}>
-          <tr className='cellStyle'>
-            <th>Name</th>
-            <th>Check Type</th>
-            <th>Activated</th>
-            <th>Muted</th>
-            <th>Tags</th>
-            <th>Status</th>
-            <th>Actions</th>
+          <tr className={styles.cellStyle}>
+            <th className={styles.cellStyle}>Name</th>
+            <th className={styles.cellStyle}>Check Type</th>
+            <th className={styles.cellStyle}>Activated</th>
+            <th className={styles.cellStyle}>Muted</th>
+            <th className={styles.cellStyle}>Tags</th>
+            <th className={styles.cellStyle}>Availability</th>
+            <th className={styles.cellStyle}>Status</th>
+            <th className={styles.cellStyle}>Actions</th>
           </tr>
         </thead>
         <tbody style={{ color: 'white', fontSize: '18px' }}>
@@ -89,14 +108,28 @@ const ChecksTable = () => {
             const statusColor = getStatusColor(status);
 
             return (
-              <tr className='cellStyle' key={check.id} data-id={check.id}>
-                <td>{check.name}</td>
-                <td>{check.checkType}</td>
-                <td>{check.activated ? 'Yes' : 'No'}</td>
-                <td>{check.muted ? 'Yes' : 'No'}</td>
-                <td>{check.tags.join(', ')}</td>
-                <td style={{ color: statusColor }}>{status}</td>
-                <td>
+              <tr className={styles.cellStyle} key={check.id} data-id={check.id}>
+                <td className={styles.cellStyle}>{check.name}</td>
+                <td className={styles.cellStyle}>{check.checkType}</td>
+                <td className={styles.cellStyle}>{check.activated ? 'Yes' : 'No'}</td>
+                <td className={styles.cellStyle}>{check.muted ? 'Yes' : 'No'}</td>
+                <td className={styles.cellStyle}>{check.tags.join(', ')}</td>
+                <td className={styles.cellStyle}>
+                  {check.checkType === 'MULTI_STEP'
+                    ? 'n/a'
+                    : check.analytics && (
+                        <div>
+                          <span style={{ color: statusColor }}>
+                            {check.analytics.series[0].data[0].availability}
+                          </span>
+                        </div>
+                      )}
+                </td>
+
+                <td className={styles.cellStyle} style={{ color: statusColor }}>
+                  {status}
+                </td>
+                <td className={styles.cellStyle}>
                   <UpdateButton
                     checkId={check.id}
                     currentState={check.activated}
