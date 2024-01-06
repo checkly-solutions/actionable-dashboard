@@ -1,0 +1,166 @@
+[
+  {
+      "id": 744715,
+      "name": "app-usa tier1 Group",
+      "concurrency": 100,
+      "apiCheckDefaults": {
+          "url": "",
+          "headers": [],
+          "basicAuth": {
+              "password": "",
+              "username": ""
+          },
+          "assertions": [],
+          "queryParameters": []
+      },
+      "alertSettings": {},
+      "environmentVariables": [],
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "activated": false,
+      "muted": false,
+      "useGlobalAlertSettings": true,
+      "doubleCheck": true,
+      "locations": [
+          "us-east-1",
+          "us-west-2"
+      ],
+      "tags": [
+          "app-usa",
+          "tier1"
+      ],
+      "created_at": "2024-01-05T19:23:36.225Z",
+      "updated_at": "2024-01-05T19:34:54.697Z",
+      "runtimeId": null,
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 203115,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203123,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203124,
+              "activated": true
+          }
+      ],
+      "privateLocations": []
+  },
+  {
+      "id": 700818,
+      "name": "flywheel tier4 Group",
+      "concurrency": 100,
+      "apiCheckDefaults": {
+          "url": "",
+          "headers": [],
+          "basicAuth": {
+              "password": "",
+              "username": ""
+          },
+          "assertions": [],
+          "queryParameters": []
+      },
+      "alertSettings": {},
+      "environmentVariables": [],
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "activated": false,
+      "muted": false,
+      "useGlobalAlertSettings": true,
+      "doubleCheck": true,
+      "locations": [
+          "eu-central-1"
+      ],
+      "tags": [
+          "flywheel",
+          "tier4"
+      ],
+      "created_at": "2023-12-08T22:21:52.991Z",
+      "updated_at": "2024-01-04T17:02:37.699Z",
+      "runtimeId": null,
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 201597,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201598,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205370,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205393,
+              "activated": true
+          }
+      ],
+      "privateLocations": []
+  },
+  {
+      "id": 741577,
+      "name": "next danube preview",
+      "concurrency": 3,
+      "apiCheckDefaults": {
+          "url": "",
+          "headers": [],
+          "basicAuth": {
+              "password": "",
+              "username": ""
+          },
+          "assertions": [],
+          "queryParameters": []
+      },
+      "alertSettings": {},
+      "environmentVariables": [],
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "activated": false,
+      "muted": false,
+      "useGlobalAlertSettings": true,
+      "doubleCheck": true,
+      "locations": [
+          "us-east-1",
+          "eu-west-1"
+      ],
+      "tags": [
+          "preview",
+          "cli"
+      ],
+      "created_at": "2024-01-03T20:26:09.682Z",
+      "updated_at": "2024-01-05T19:35:09.021Z",
+      "runtimeId": null,
+      "retryStrategy": {
+          "type": "FIXED",
+          "maxRetries": 1,
+          "sameRegion": true,
+          "baseBackoffSeconds": 30,
+          "maxDurationSeconds": 600
+      },
+      "runParallel": true,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 205370,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205393,
+              "activated": true
+          }
+      ],
+      "privateLocations": []
+  }
+]

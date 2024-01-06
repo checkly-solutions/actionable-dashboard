@@ -8,11 +8,14 @@ import {
   getAnalyticsApi,
   getAnalyticsBrowser,
 } from '../api/routes';
-import UpdateButton from './updateButton';
+import TableRow from './tableRow';
 import TagsList from './tagsList';
 import GroupList from './groupList';
-import { getStatus, getStatusColor } from '../utils/statusUtils';
-import styles from '../page.module.css';
+//stub data
+import checkData from '../data/check.json'
+import statusData from '../data/status.json'
+import groupData from '../data/group.json'
+
 
 const ChecksTable = () => {
   const [data, setData] = useState(null);
@@ -20,6 +23,16 @@ const ChecksTable = () => {
   const [error, setError] = useState(null);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
   const [selectedTags, setSelectedTags] = useState([]);
+  const headerTitles = [
+    'Name',
+    'Check Type',
+    'Activated',
+    'Muted',
+    'Tags',
+    'Availability',
+    'Status',
+    'Actions',
+  ];
 
   useEffect(() => {
     async function fetchData() {
@@ -91,61 +104,12 @@ const ChecksTable = () => {
       <TagsList checks={data} onTagClick={handleTagClick} selectedTags={selectedTags} />
       <table>
         <thead style={{ color: 'white', fontSize: '24px' }}>
-          <tr className={styles.cellStyle}>
-            <th className={styles.cellStyle}>Name</th>
-            <th className={styles.cellStyle}>Check Type</th>
-            <th className={styles.cellStyle}>Activated</th>
-            <th className={styles.cellStyle}>Muted</th>
-            <th className={styles.cellStyle}>Tags</th>
-            <th className={styles.cellStyle}>Availability</th>
-            <th className={styles.cellStyle}>Status</th>
-            <th className={styles.cellStyle}>Actions</th>
-          </tr>
+          <TableRow rowData={headerTitles} isHeader />
         </thead>
         <tbody style={{ color: 'white', fontSize: '18px' }}>
-          {filteredData.map((check) => {
-            const status = getStatus(check);
-            const statusColor = getStatusColor(status);
-
-            return (
-              <tr className={styles.cellStyle} key={check.id} data-id={check.id}>
-                <td className={styles.cellStyle}>{check.name}</td>
-                <td className={styles.cellStyle}>{check.checkType}</td>
-                <td className={styles.cellStyle}>{check.activated ? 'Yes' : 'No'}</td>
-                <td className={styles.cellStyle}>{check.muted ? 'Yes' : 'No'}</td>
-                <td className={styles.cellStyle}>{check.tags.join(', ')}</td>
-                <td className={styles.cellStyle}>
-                  {check.checkType === 'MULTI_STEP'
-                    ? 'n/a'
-                    : check.analytics && (
-                        <div>
-                          <span style={{ color: statusColor }}>
-                            {check.analytics.series[0].data[0].availability}
-                          </span>
-                        </div>
-                      )}
-                </td>
-
-                <td className={styles.cellStyle} style={{ color: statusColor }}>
-                  {status}
-                </td>
-                <td className={styles.cellStyle}>
-                  <UpdateButton
-                    checkId={check.id}
-                    currentState={check.activated}
-                    updateType='activated'
-                    onSubmit={handleSubmission}
-                  />
-                  <UpdateButton
-                    checkId={check.id}
-                    currentState={check.muted}
-                    updateType='muted'
-                    onSubmit={handleSubmission}
-                  />
-                </td>
-              </tr>
-            );
-          })}
+          {filteredData.map((check) => (
+            <TableRow key={check.id} rowData={check} handleSubmission={handleSubmission} />
+          ))}
         </tbody>
       </table>
     </>
