@@ -60,7 +60,7 @@ async function getAnalyticsBrowser(id) {
 async function getAnalyticsApi(id) {
   try {
     const response = await api.get(
-      `analytics/api-checks/${id}?quickRange=thisWeek&metrics=availability`
+      `analytics/api-checks/${id}?quickRange=thisMonth&metrics=availability`
     );
     console.log(response.data, 'api analytics');
     return response.data;
@@ -87,5 +87,5 @@ module.exports = {
   getAllCheckStatuses,
   updateCheck,
   getAnalyticsApi,
-  getAnalyticsBrowser
+  getAnalyticsBrowser,
 };

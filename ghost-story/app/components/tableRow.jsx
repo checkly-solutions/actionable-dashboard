@@ -23,7 +23,7 @@ const TableRow = ({ rowData, isHeader, handleSubmission }) => {
         <td className={styles.cellStyle}>{rowData.checkType}</td>
         <td className={styles.cellStyle}>{rowData.activated ? 'Yes' : 'No'}</td>
         <td className={styles.cellStyle}>{rowData.muted ? 'Yes' : 'No'}</td>
-        <td className={styles.cellStyle}>{rowData.tags}</td>
+        <td className={styles.cellStyle}>{rowData.tags} </td>
         <td className={styles.cellStyle}>
           {rowData.checkType === 'MULTI_STEP' ? (
             'n/a'

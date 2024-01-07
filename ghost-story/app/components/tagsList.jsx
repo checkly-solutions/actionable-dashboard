@@ -10,7 +10,7 @@ const TagsList = ({ checks, onTagClick, selectedTags }) => {
 
   return (
     <div style={{ width: '100%' }}>
-      <h3 style={{ color: 'white', fontSize: '18px' }}>Tags:</h3>
+      <h3 style={{ color: 'white', fontSize: '24px' }}>Tags:</h3>
       {[...uniqueTags].map((tag) => (
         <span
           key={tag}
@@ -18,9 +18,10 @@ const TagsList = ({ checks, onTagClick, selectedTags }) => {
           style={{
             color: selectedTags.includes(tag) ? 'blue' : 'white',
             cursor: 'pointer',
+            fontSize: '18px'
           }}
         >
-          {tag}{" "}
+          {tag}{' '}
         </span>
       ))}
     </div>

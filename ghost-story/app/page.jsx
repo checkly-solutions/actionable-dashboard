@@ -1,6 +1,5 @@
 import styles from './page.module.css';
-import ChecksTable from './components/checksTable.jsx';
-
+import ChecksTable from './components/checksTable/checksTable.jsx';
 
 export default function Home() {
   return (

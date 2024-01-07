@@ -1,21 +1,26 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+// requests
 import {
   getAllChecks,
   getAllCheckStatuses,
   getAllCheckGroups,
   getAnalyticsApi,
   getAnalyticsBrowser,
-} from '../api/routes';
-import TableRow from './tableRow';
-import TagsList from './tagsList';
-import GroupList from './groupList';
+} from '../../api/routes';
+import TableRow from '../tableRow';
+import AvailabilityRow from '../AvailabilityRow';
+import TagsList from '../tagsList';
+import GroupList from '../groupList';
 //stub data
-import checkData from '../data/check.json'
-import statusData from '../data/status.json'
-import groupData from '../data/group.json'
+import checkData from '../../data/check.json';
+import statusData from '../../data/status.json';
+import groupData from '../../data/group.json';
+// css
+import styles from './checksTable.module.css';
 
+import { calculateAverageAvailability } from '@/app/utils/statusUtils';
 
 const ChecksTable = () => {
   const [data, setData] = useState(null);
@@ -98,11 +103,16 @@ const ChecksTable = () => {
     return <div>Loading...</div>;
   }
 
+  const averageAvailability = calculateAverageAvailability(filteredData);
+  console.log('Average Availability:', averageAvailability);
+
   return (
     <>
-      <GroupList groups={groups} />
+      {/* <GroupList groups={groups} /> */}
       <TagsList checks={data} onTagClick={handleTagClick} selectedTags={selectedTags} />
-      <table>
+      <AvailabilityRow averageAvailability={averageAvailability.toString()} />
+
+      <table className={styles.tableBodyWrapper}>
         <thead style={{ color: 'white', fontSize: '24px' }}>
           <TableRow rowData={headerTitles} isHeader />
         </thead>

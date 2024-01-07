@@ -23,3 +23,17 @@ export const getStatusColor = (status) => {
       return 'green';
   }
 };
+
+export const calculateAverageAvailability = (data) => {
+  let totalAvailability = 0;
+  let count = 0;
+
+  data.forEach((check) => {
+    if (check.analytics && check.analytics.series[0].data[0].availability != null) {
+      totalAvailability += check.analytics.series[0].data[0].availability;
+      count += 1;
+    }
+  });
+
+  return count > 0 ? (totalAvailability / count).toFixed(2) : 0; // toFixed(2) for two decimal places
+};
