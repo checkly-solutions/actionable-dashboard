@@ -1,0 +1,1269 @@
+[
+  {
+      "id": "53cea72d-f852-433b-a61e-f0e0aab8c086",
+      "checkType": "API",
+      "name": "mlcampbell flywheel tier4",
+      "frequency": 5,
+      "frequencyOffset": 31,
+      "activated": false,
+      "muted": true,
+      "shouldFail": false,
+      "locations": [
+          "eu-central-1"
+      ],
+      "script": null,
+      "created_at": "2023-12-08T22:21:53.053Z",
+      "updated_at": "2024-01-05T22:48:51.356Z",
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [
+          "API",
+          "flywheel",
+          "tier4",
+          "cli"
+      ],
+      "sslCheckDomain": "www.mlcampbell.com",
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "escalationType": "RUN_BASED"
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 10000,
+      "maxResponseTime": 20000,
+      "groupId": 700818,
+      "groupOrder": null,
+      "runtimeId": "2023.02",
+      "scriptPath": null,
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 168254,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168255,
+              "activated": true
+          },
+          {
+              "alertChannelId": 188880,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168866,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168867,
+              "activated": true
+          },
+          {
+              "alertChannelId": 169973,
+              "activated": true
+          },
+          {
+              "alertChannelId": 170222,
+              "activated": true
+          },
+          {
+              "alertChannelId": 180363,
+              "activated": true
+          },
+          {
+              "alertChannelId": 197417,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198502,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198503,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198504,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198505,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198179,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198180,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198181,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203115,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203117,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203118,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201594,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201595,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201596,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201597,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201599,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203119,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201600,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201601,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201602,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201603,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201604,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203120,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203121,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203124,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203123,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203116,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203122,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201598,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205162,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205163,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205164,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205393,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205370,
+              "activated": true
+          }
+      ],
+      "request": {
+          "method": "GET",
+          "url": "https://www.mlcampbell.com/",
+          "body": "",
+          "bodyType": "NONE",
+          "headers": [],
+          "queryParameters": [],
+          "assertions": [
+              {
+                  "regex": null,
+                  "source": "STATUS_CODE",
+                  "target": "200",
+                  "property": "",
+                  "comparison": "EQUALS"
+              }
+          ],
+          "basicAuth": null,
+          "followRedirects": true,
+          "skipSSL": false
+      },
+      "privateLocations": []
+  },
+  {
+      "id": "1e57ffa4-6f0d-4c3f-965a-a072893aaa8a",
+      "checkType": "API",
+      "name": "Fetch Book List",
+      "frequency": 10,
+      "frequencyOffset": 92,
+      "activated": false,
+      "muted": false,
+      "shouldFail": false,
+      "locations": [
+          "eu-central-1"
+      ],
+      "script": null,
+      "created_at": "2023-12-13T01:04:20.639Z",
+      "updated_at": "2024-01-04T21:19:57.831Z",
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [
+          "mac"
+      ],
+      "sslCheckDomain": "danube-web.shop",
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": "/*@global request */\n\n/**\n * This setup script example shows how you can import other files, use async functions and instrument the globals\n * that are available during runtime, such as the request.\n *\n * For more info see: https://www.checklyhq.com/docs/api-checks/setup-teardown-scripts/#setup-scripts\n */\n\nimport { getToken } from './auth-client'\n\nasync function setup () {\n  const token = await getToken()\n  request.headers['X-My-Auth-Header'] = token\n}\n\nawait setup()\n\n",
+      "localTearDownScript": null,
+      "alertSettings": {
+          "escalationType": "RUN_BASED"
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 10000,
+      "maxResponseTime": 20000,
+      "groupId": null,
+      "groupOrder": null,
+      "runtimeId": "2023.02",
+      "scriptPath": null,
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 205393,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205370,
+              "activated": true
+          }
+      ],
+      "request": {
+          "method": "GET",
+          "url": "https://danube-web.shop/api/books",
+          "body": "",
+          "bodyType": "NONE",
+          "headers": [],
+          "queryParameters": [],
+          "assertions": [
+              {
+                  "regex": null,
+                  "source": "STATUS_CODE",
+                  "target": "200",
+                  "property": "",
+                  "comparison": "EQUALS"
+              },
+              {
+                  "regex": null,
+                  "source": "JSON_BODY",
+                  "target": "",
+                  "property": "$[0].id",
+                  "comparison": "NOT_NULL"
+              }
+          ],
+          "basicAuth": null,
+          "followRedirects": true,
+          "skipSSL": false
+      },
+      "privateLocations": []
+  },
+  {
+      "id": "0a1fde42-336d-4141-b430-0811710202ae",
+      "checkType": "BROWSER",
+      "name": "https://checklyhq.com",
+      "frequency": 10,
+      "frequencyOffset": 53,
+      "activated": false,
+      "muted": true,
+      "shouldFail": false,
+      "locations": [
+          "us-east-1",
+          "us-east-2"
+      ],
+      "script": "/**\n  * To learn more about Playwright Test visit:\n  * https://www.checklyhq.com/docs/browser-checks/playwright-test/\n  * https://playwright.dev/docs/writing-tests\n  */\n\nconst { expect, test } = require('@playwright/test')\n\n// Set the action timeout to 10 seconds to quickly identify failing actions.\n// By default Playwright Test has no timeout for actions (e.g. clicking an element).\n// Learn more here: https://www.checklyhq.com/docs/browser-checks/timeouts/\ntest.use({ actionTimeout: 10000 })\n\ntest('visit page and take screenshot', async ({ page }) => {\n    // Change checklyhq.com to your site's URL,\n    // or, even better, define a ENVIRONMENT_URL environment variable\n    // to reuse it across your browser checks\n    const response = await page.goto(process.env.ENVIRONMENT_URL || 'https://checklyhq.com')\n\n    // Take a screenshot\n    await page.screenshot({ path: 'screenshot.jpg' })\n\n    // Test that the response did not fail\n    expect(response.status(), 'should respond with correct status code').toBeLessThan(400)\n})\n",
+      "created_at": "2023-12-11T17:21:22.317Z",
+      "updated_at": "2024-01-04T21:58:39.884Z",
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [],
+      "sslCheckDomain": "",
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "reminders": {
+              "amount": 0,
+              "interval": 5
+          },
+          "escalationType": "RUN_BASED",
+          "runBasedEscalation": {
+              "failedRunThreshold": 1
+          },
+          "timeBasedEscalation": {
+              "minutesFailingThreshold": 5
+          }
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 15000,
+      "maxResponseTime": 30000,
+      "groupId": null,
+      "groupOrder": null,
+      "runtimeId": null,
+      "scriptPath": null,
+      "retryStrategy": {
+          "type": "LINEAR",
+          "maxRetries": 1,
+          "sameRegion": true,
+          "baseBackoffSeconds": 60,
+          "maxDurationSeconds": 600
+      },
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 168254,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168255,
+              "activated": true
+          },
+          {
+              "alertChannelId": 188880,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168866,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168867,
+              "activated": true
+          },
+          {
+              "alertChannelId": 169973,
+              "activated": true
+          },
+          {
+              "alertChannelId": 170222,
+              "activated": true
+          },
+          {
+              "alertChannelId": 180363,
+              "activated": true
+          },
+          {
+              "alertChannelId": 197417,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198502,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198503,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198504,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198505,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198179,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198180,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198181,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201594,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201595,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201596,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201597,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201599,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201600,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201601,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201602,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201603,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201604,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203123,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203115,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203116,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203117,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203118,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203119,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203120,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203121,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203122,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203124,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201598,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205162,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205163,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205164,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205393,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205370,
+              "activated": true
+          }
+      ],
+      "privateLocations": []
+  },
+  {
+      "id": "8784f336-638e-421f-9a65-3e81ce37f72a",
+      "checkType": "API",
+      "name": "Next Danube API preview - Books",
+      "frequency": 5,
+      "frequencyOffset": 31,
+      "activated": true,
+      "muted": false,
+      "shouldFail": false,
+      "locations": [
+          "us-east-1",
+          "eu-west-1"
+      ],
+      "script": null,
+      "created_at": "2024-01-03T20:26:09.714Z",
+      "updated_at": null,
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [
+          "cli",
+          "next-danube",
+          "preview"
+      ],
+      "sslCheckDomain": "next-danube-webshop-backend-staging.vercel.app",
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "escalationType": "RUN_BASED"
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 3000,
+      "maxResponseTime": 5000,
+      "groupId": 741577,
+      "groupOrder": null,
+      "runtimeId": "2023.09",
+      "scriptPath": null,
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 205162,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205163,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205164,
+              "activated": true
+          }
+      ],
+      "request": {
+          "method": "GET",
+          "url": "https://next-danube-webshop-backend-staging.vercel.app/api/v1/books",
+          "body": "",
+          "bodyType": "NONE",
+          "headers": [],
+          "queryParameters": [],
+          "assertions": [
+              {
+                  "regex": null,
+                  "source": "STATUS_CODE",
+                  "target": "200",
+                  "property": "",
+                  "comparison": "EQUALS"
+              }
+          ],
+          "basicAuth": null,
+          "followRedirects": true,
+          "skipSSL": false
+      },
+      "privateLocations": []
+  },
+  {
+      "id": "e8a606f1-7c7f-4bae-ac91-84484eef4fb6",
+      "checkType": "API",
+      "name": "Next Danube API preview - Reviews",
+      "frequency": 10,
+      "frequencyOffset": 56,
+      "activated": false,
+      "muted": false,
+      "shouldFail": false,
+      "locations": [
+          "us-east-1",
+          "eu-west-1"
+      ],
+      "script": null,
+      "created_at": "2024-01-03T20:26:09.730Z",
+      "updated_at": "2024-01-04T21:04:56.927Z",
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [
+          "cli",
+          "next-danube",
+          "preview"
+      ],
+      "sslCheckDomain": "next-danube-webshop-backend-staging.vercel.app",
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "escalationType": "RUN_BASED"
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 3000,
+      "maxResponseTime": 5000,
+      "groupId": 741577,
+      "groupOrder": null,
+      "runtimeId": "2023.09",
+      "scriptPath": null,
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 168254,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168255,
+              "activated": true
+          },
+          {
+              "alertChannelId": 188880,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168866,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168867,
+              "activated": true
+          },
+          {
+              "alertChannelId": 169973,
+              "activated": true
+          },
+          {
+              "alertChannelId": 170222,
+              "activated": true
+          },
+          {
+              "alertChannelId": 180363,
+              "activated": true
+          },
+          {
+              "alertChannelId": 197417,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198502,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198503,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198504,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198505,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198179,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198180,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198181,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201594,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201595,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201596,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201597,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201599,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201600,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201601,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201602,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201603,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201604,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203123,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203115,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203116,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203117,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203118,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203119,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203120,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203121,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203122,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203124,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201598,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205162,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205163,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205164,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205393,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205370,
+              "activated": true
+          }
+      ],
+      "request": {
+          "method": "GET",
+          "url": "https://next-danube-webshop-backend-staging.vercel.app/api/v1/reviews",
+          "body": "",
+          "bodyType": "NONE",
+          "headers": [],
+          "queryParameters": [],
+          "assertions": [
+              {
+                  "regex": null,
+                  "source": "STATUS_CODE",
+                  "target": "200",
+                  "property": "",
+                  "comparison": "EQUALS"
+              }
+          ],
+          "basicAuth": null,
+          "followRedirects": true,
+          "skipSSL": false
+      },
+      "privateLocations": []
+  },
+  {
+      "id": "f2b1698c-f241-4b21-8a8f-66f443792c5c",
+      "checkType": "BROWSER",
+      "name": "basic-up app-usa tier1",
+      "frequency": 5,
+      "frequencyOffset": 7,
+      "activated": true,
+      "muted": false,
+      "shouldFail": false,
+      "locations": [
+          "us-east-2",
+          "eu-west-1"
+      ],
+      "script": "import { test, expect } from \"@playwright/test\";\n\ntest(\"basic visit\", async ({ page }) => {\n  await page.goto(\"https://www.sherwin-williams.com\");\n  await page.waitForLoadState(\"networkidle\");\n  await page.screenshot();\n});\n",
+      "created_at": "2024-01-05T19:23:36.240Z",
+      "updated_at": "2024-01-05T19:30:54.211Z",
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [
+          "tier1",
+          "app-usa",
+          "cli"
+      ],
+      "sslCheckDomain": null,
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "escalationType": "RUN_BASED"
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 10000,
+      "maxResponseTime": 20000,
+      "groupId": 744715,
+      "groupOrder": null,
+      "runtimeId": "2023.09",
+      "scriptPath": "src/browser-scripts/basic-up.spec.ts",
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [],
+      "privateLocations": []
+  },
+  {
+      "id": "f55cb146-96ce-42a9-921b-ba9543cc4d3c",
+      "checkType": "API",
+      "name": "sherwin-ar app-usa tier1",
+      "frequency": 5,
+      "frequencyOffset": 32,
+      "activated": true,
+      "muted": false,
+      "shouldFail": false,
+      "locations": [
+          "us-east-2",
+          "eu-west-1"
+      ],
+      "script": null,
+      "created_at": "2024-01-05T19:23:36.246Z",
+      "updated_at": null,
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [
+          "API",
+          "app-usa",
+          "tier1",
+          "cli"
+      ],
+      "sslCheckDomain": "www.sherwin.com.ar",
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "escalationType": "RUN_BASED"
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 10000,
+      "maxResponseTime": 20000,
+      "groupId": 744715,
+      "groupOrder": null,
+      "runtimeId": "2023.09",
+      "scriptPath": null,
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [],
+      "request": {
+          "method": "GET",
+          "url": "https://www.sherwin.com.ar",
+          "body": "",
+          "bodyType": "NONE",
+          "headers": [],
+          "queryParameters": [],
+          "assertions": [
+              {
+                  "regex": null,
+                  "source": "STATUS_CODE",
+                  "target": "200",
+                  "property": "",
+                  "comparison": "EQUALS"
+              }
+          ],
+          "basicAuth": null,
+          "followRedirects": true,
+          "skipSSL": true
+      },
+      "privateLocations": []
+  },
+  {
+      "id": "256667af-a628-4efb-9b00-b53802bfcffa",
+      "checkType": "MULTI_STEP",
+      "name": "Next Danube preview CRUD - multi",
+      "frequency": 10,
+      "frequencyOffset": 79,
+      "activated": true,
+      "muted": false,
+      "shouldFail": false,
+      "locations": [
+          "us-east-1",
+          "eu-west-1"
+      ],
+      "script": "import { test, expect } from \"@playwright/test\"\n\n/**\n * Use this third party service to create a simple CRUD API\n * An API_KEY from https://crudapi.co.uk/ is required for this example to work.\n */\nconst baseUrl = \"https://crudapi.co.uk/api/v1/todo\"\n\nconst headers = {\n  Authorization: `Bearer ${process.env.CRUD_API_KEY}`,\n  \"Content-Type\": \"application/json\",\n}\n\nlet createdResources = null\n\ntest.beforeAll(async ({ request }) => {\n  const response = await request.get(baseUrl, { headers })\n  const { items } = await response.json()\n  expect(items.length).toEqual(0)\n})\n\ntest.afterAll(async ({ request }) => {\n  if (createdResources) {\n    const response = await request.delete(baseUrl, {\n      headers,\n      data: createdResources,\n    })\n    expect(response).toBeOK()\n  }\n})\n\ntest(\"Todo List\", async ({ request }) => {\n  await test.step(\"Create a Todo\", async () => {\n    const response = await request.post(baseUrl, {\n      headers,\n      data: [\n        {\n          title: \"Try out Checkly MultiStep\",\n          done: true,\n        },\n      ],\n    })\n\n    expect(response).toBeOK()\n    const { items } = await response.json()\n    createdResources = items\n  })\n})\n",
+      "created_at": "2024-01-03T20:26:11.102Z",
+      "updated_at": "2024-01-05T19:27:54.141Z",
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [
+          "cli",
+          "next-danube",
+          "preview"
+      ],
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "escalationType": "RUN_BASED"
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 10000,
+      "maxResponseTime": 20000,
+      "groupId": 741577,
+      "groupOrder": null,
+      "runtimeId": "2023.09",
+      "scriptPath": "tests/multi-crud.spec.ts",
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 205162,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205163,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205164,
+              "activated": true
+          }
+      ],
+      "privateLocations": []
+  },
+  {
+      "id": "15aed4fa-9d3d-4a80-9a70-97ddb473afc7",
+      "checkType": "MULTI_STEP",
+      "name": "multi-CRUD app-usa tier1",
+      "frequency": 5,
+      "frequencyOffset": 32,
+      "activated": true,
+      "muted": false,
+      "shouldFail": false,
+      "locations": [
+          "us-east-2",
+          "eu-west-1"
+      ],
+      "script": "/**\n * This check will check the functionality of the Checkly check groups API  - It will create, get, update and delete a group.\n * The Checkly API documentation is available here: https://developers.checklyhq.com/reference\n */\n\nimport { test, expect } from \"@playwright/test\"\n\nconst baseUrl = \"https://api.checklyhq.com/v1\"\n\n/**\n * The Checkly Public API uses API keys to authenticate requests.\n * You can generate a key for your account here: https://app.checklyhq.com/settings/user/api-keys\n */\nconst headers = {\n  // Learn more about using environment variables here: https://www.checklyhq.com/docs/api-checks/variables\n  // Authorization: `Bearer ${process.env.API_KEY}`,\n  Authorization: `Bearer cu_64c9e87bcea0486a8f7e52fa759d51aa`,\n  // \"x-checkly-account\": process.env.ACCOUNT_ID,\n  \"x-checkly-account\": \"70a705d3-488c-4ade-8f54-376ae7e974ba\",\n}\n\ntest(\"Verify Group API\", async ({ request }) => {\n  /**\n   * Create a group\n   */\n  const group = await test.step(\"POST /check-groups\", async () => {\n    const response = await request.post(`${baseUrl}/check-groups/`, {\n      data: {\n        locations: [\"eu-west-1\"],\n        name: \"createdViaApiCheck\",\n      },\n      headers,\n    })\n    expect(response).toBeOK()\n\n    return response.json()\n  })\n\n  /**\n   * Get the newly created group\n   */\n  await test.step(\"GET /check-groups/{id}\", async () => {\n    const response = await request.get(`${baseUrl}/check-groups/${group.id}`, {\n      headers,\n    })\n    expect(response).toBeOK()\n\n    const receivedGroup = await response.json()\n    expect(receivedGroup.id).toEqual(group.id)\n  })\n\n  /**\n   * Update the new group\n   */\n  await test.step(\"PUT /check-groups/{id}\", async () => {\n    const response = await request.put(`${baseUrl}/check-groups/${group.id}`, {\n      data: {\n        tags: [\"public-api\", \"added-by-check\"],\n      },\n      headers,\n    })\n    expect(response).toBeOK()\n  })\n\n  /**\n   * Delete the new group\n   */\n  await test.step(\"DELETE /check-group/{id}\", async () => {\n    const response = await request.delete(\n      `${baseUrl}/check-groups/${group.id}`,\n      { headers },\n    )\n    expect(response).toBeOK()\n  })\n})",
+      "created_at": "2024-01-05T19:23:36.258Z",
+      "updated_at": "2024-01-05T19:33:16.237Z",
+      "environmentVariables": [],
+      "doubleCheck": true,
+      "tags": [
+          "tier1",
+          "app-usa",
+          "cli"
+      ],
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "escalationType": "RUN_BASED"
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 10000,
+      "maxResponseTime": 20000,
+      "groupId": 744715,
+      "groupOrder": null,
+      "runtimeId": "2023.09",
+      "scriptPath": "src/multi-scripts/multi-CRUD.spec.ts",
+      "retryStrategy": null,
+      "runParallel": false,
+      "alertChannelSubscriptions": [],
+      "privateLocations": []
+  },
+  {
+      "id": "9ef33453-fcc6-4ea3-9a8a-6b359c5f893e",
+      "checkType": "MULTI_STEP",
+      "name": "Authentication + CRUD",
+      "frequency": 10,
+      "frequencyOffset": 55,
+      "activated": false,
+      "muted": false,
+      "shouldFail": false,
+      "locations": [
+          "us-east-1",
+          "us-east-2"
+      ],
+      "script": "/**\n * This check will check the functionality of the Checkly check groups API  - It will create, get, update and delete a group.\n * The Checkly API documentation is available here: https://developers.checklyhq.com/reference\n */\n\nimport { test, expect } from \"@playwright/test\"\n\nconst baseUrl = \"https://api.checklyhq.com/v1\"\n\n/**\n * The Checkly Public API uses API keys to authenticate requests.\n * You can generate a key for your account here: https://app.checklyhq.com/settings/user/api-keys\n */\nconst headers = {\n  // Learn more about using environment variables here: https://www.checklyhq.com/docs/api-checks/variables\n  // Authorization: `Bearer ${process.env.API_KEY}`,\n  Authorization: `Bearer cu_64c9e87bcea0486a8f7e52fa759d51aa`,\n  // \"x-checkly-account\": process.env.ACCOUNT_ID,\n  \"x-checkly-account\": \"70a705d3-488c-4ade-8f54-376ae7e974ba\",\n}\n\ntest(\"Verify Group API\", async ({ request }) => {\n  /**\n   * Create a group\n   */\n  const group = await test.step(\"POST /check-groups\", async () => {\n    const response = await request.post(`${baseUrl}/check-groups/`, {\n      data: {\n        locations: [\"eu-west-1\"],\n        name: \"createdViaApiCheck\",\n      },\n      headers,\n    })\n    expect(response).toBeOK()\n\n    return response.json()\n  })\n\n  /**\n   * Get the newly created group\n   */\n  await test.step(\"GET /check-groups/{id}\", async () => {\n    const response = await request.get(`${baseUrl}/check-groups/${group.id}`, {\n      headers,\n    })\n    expect(response).toBeOK()\n\n    const receivedGroup = await response.json()\n    expect(receivedGroup.id).toEqual(group.id)\n  })\n\n  /**\n   * Update the new group\n   */\n  await test.step(\"PUT /check-groups/{id}\", async () => {\n    const response = await request.put(`${baseUrl}/check-groups/${group.id}`, {\n      data: {\n        tags: [\"public-api\", \"added-by-check\"],\n      },\n      headers,\n    })\n    expect(response).toBeOK()\n  })\n\n  /**\n   * Delete the new group\n   */\n  await test.step(\"DELETE /check-group/{id}\", async () => {\n    const response = await request.delete(\n      `${baseUrl}/check-groups/${group.id}`,\n      { headers },\n    )\n    expect(response).toBeOK()\n  })\n})\n",
+      "created_at": "2023-12-18T23:26:27.501Z",
+      "updated_at": "2024-01-05T19:37:15.049Z",
+      "environmentVariables": [],
+      "doubleCheck": false,
+      "tags": [],
+      "setupSnippetId": null,
+      "tearDownSnippetId": null,
+      "localSetupScript": null,
+      "localTearDownScript": null,
+      "alertSettings": {
+          "reminders": {
+              "amount": 0,
+              "interval": 5
+          },
+          "escalationType": "RUN_BASED",
+          "runBasedEscalation": {
+              "failedRunThreshold": 1
+          },
+          "timeBasedEscalation": {
+              "minutesFailingThreshold": 5
+          }
+      },
+      "useGlobalAlertSettings": true,
+      "degradedResponseTime": 15000,
+      "maxResponseTime": 30000,
+      "groupId": null,
+      "groupOrder": null,
+      "runtimeId": "2023.09",
+      "scriptPath": null,
+      "retryStrategy": {
+          "type": "LINEAR",
+          "maxRetries": 2,
+          "sameRegion": true,
+          "baseBackoffSeconds": 60,
+          "maxDurationSeconds": 600
+      },
+      "runParallel": false,
+      "alertChannelSubscriptions": [
+          {
+              "alertChannelId": 168254,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168255,
+              "activated": true
+          },
+          {
+              "alertChannelId": 188880,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168866,
+              "activated": true
+          },
+          {
+              "alertChannelId": 168867,
+              "activated": true
+          },
+          {
+              "alertChannelId": 169973,
+              "activated": true
+          },
+          {
+              "alertChannelId": 170222,
+              "activated": true
+          },
+          {
+              "alertChannelId": 180363,
+              "activated": true
+          },
+          {
+              "alertChannelId": 197417,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198502,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198503,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198504,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198505,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198179,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198180,
+              "activated": true
+          },
+          {
+              "alertChannelId": 198181,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203115,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203117,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203118,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201594,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201595,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201596,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201597,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201599,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203119,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201600,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201601,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201602,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201603,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201604,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203120,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203121,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203124,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203123,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203116,
+              "activated": true
+          },
+          {
+              "alertChannelId": 203122,
+              "activated": true
+          },
+          {
+              "alertChannelId": 201598,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205162,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205163,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205164,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205393,
+              "activated": true
+          },
+          {
+              "alertChannelId": 205370,
+              "activated": true
+          }
+      ],
+      "privateLocations": []
+  }
+]

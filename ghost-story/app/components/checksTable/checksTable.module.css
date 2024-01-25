@@ -1,0 +1,5 @@
+.tableBodyWrapper {
+  min-height: 500px; /* Adjust to your desired minimum height */
+  overflow-y: auto; /* Adds scrolling */
+  display: block;
+}
