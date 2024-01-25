@@ -1,6 +1,7 @@
 const axios = require('axios');
-const apiKey = 'sv_e3b289cd144c4aba9b94259dbe50562b';
-const accountID = '70a705d3-488c-4ade-8f54-376ae7e974ba';
+require('dotenv').config({ path: '.env.local' });
+const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+const accountID = process.env.NEXT_PUBLIC_ACCOUNT_ID;
 
 const api = axios.create({
   baseURL: 'https://api.checklyhq.com/v1/',
